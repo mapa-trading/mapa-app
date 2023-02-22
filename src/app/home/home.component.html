@@ -1,1 +1,52 @@
-<p>home works!</p>
+<div class="grid" style="padding-top: 15px;">
+    <div class="col-2"></div>
+    <div class="col-8">
+        <p-card styleClass="p-card-shadow">
+            <ng-template pTemplate="header" style="margin-top: 15px;">
+                <h1 style="text-align: center; margin: 30px;">Mapa App</h1>
+            </ng-template>
+            <div class="grid" style="padding: 15px;">
+                <div class="col-3">
+                    <p-dropdown [options]="tipos" placeholder="Selecione o Tipo" optionLabel="label" (onChange)="onSelectedTipo($event.value.name)"></p-dropdown>
+                </div>
+                <div class="col-3">
+                    <p-dropdown *ngIf="activateDD" [options]="selectedAtivos" placeholder="Selecione o Ativo" optionLabel="nome" (onChange)="onSelectedAtivo($event.value.sigla)"></p-dropdown>
+                </div>
+            </div>
+            <div class="card" *ngIf="activateCard" style="padding: 15px; align-content: center;">
+                <div class="row justify-content-md-center">
+                    <div class="col-12"><h2 style="color: black">{{ selectedAtivo.nome }}</h2></div>
+                    <div class="col-2"><h6 style="color: black">Sigla:   {{ selectedAtivo.sigla }}</h6></div>
+                    <div class="col-2"><h6 style="color: black">Moeda:    {{ selectedAtivo.moeda }}</h6></div>
+                    <div class="col-4"><h6 style="color: black">Razão Social: {{ selectedAtivo.razaoSocial }}</h6></div>
+                    <div class="col-4"><h6 style="color: black">Website: <a (click)="toLink()" target="_blank" style="cursor: pointer;">{{ selectedAtivo.website }}</a></h6></div>
+                    <div class="col-12"><h6 style="color: black">Descrição:     {{ selectedAtivo.descricao }}</h6></div>
+                </div>
+                <div class="row">
+                    <div class="col-4">
+                        <h6 style="color:black; margin:15px;">Cotação Agora: {{ cotacao.valor }}</h6>
+                    </div>
+                    <div class="col-3">
+                        <label style="color:black" for="inicio">Inicio</label>
+                        <p-calendar dateFormat="dd.mm.yy" inputId="inicio" [(ngModel)]="date1"></p-calendar>
+                    </div>
+                    <div class="col-3">
+                        <label style="color:black" for="fim">Fim</label>
+                        <p-calendar dateFormat="dd.mm.yy" inputId="fim" [(ngModel)]="date2"></p-calendar>
+                    </div>
+                    <div class="col-2" style="padding-top: 30px;">
+                        <button type="button" class="btn btn-dark" style="width: 9rem; height: 3rem;" (click)="getCotacoes()">Pesquisar</button>
+                    </div>
+                </div>
+
+                <div class="container" style="padding: 30px; border-style: outset;">
+                    <div class="container" *ngFor="let cot of cotacoes"><p style="color: black">Data: {{ cot.dataHora }} --- Valor: {{ cot.valor }}</p></div>
+                </div>            
+            </div>
+            <ng-template pTemplate="footer">
+                <p>Copyright</p>
+            </ng-template>
+        </p-card>
+    </div>
+    <div class="col-2"></div>
+</div>

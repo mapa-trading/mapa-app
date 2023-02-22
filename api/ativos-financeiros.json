@@ -1,0 +1,32 @@
+{
+    "ativos-financeiros": [
+        {
+            "id": "8656ed21-9acf-46a4-9578-05bd4489dac9",
+            "nome": "Bitcoin USD",
+            "sigla": "BTC",
+            "moeda": "BRL",
+            "imagemUrl": "https://s2.coinmarketcap.com/static/img/coins/64x64/1.png",
+            "tipoAtivo": "CRYPTO"
+          },
+          {
+            "id": "ccd0f156-54e9-4d63-95c5-16524efa8c33",
+            "nome": "Embraer",
+            "sigla": "EMBR3",
+            "moeda": "BRL",
+            "descricao": "Projeto. Desenvolvimento. Fabricação. Comercialização de Aeronaves E Sistemas E Fornecimento de Suporte E Serviços de Pós-venda.",
+            "razaoSocial": "Embraer S.A.",
+            "website": "http://www.embraer.com.br/",
+            "tipoAtivo": "ACAO"
+          },
+          {
+            "id": "ccd0f156-54e9-4d63-95c5-16524efa8c36",
+            "nome": "IBovespa",
+            "sigla": "IBOV",
+            "moeda": "BRL",
+            "descricao": "O Ibovespa é o principal indicador de desempenho das ações negociadas na B3 e reúne as empresas mais importantes do mercado de capitais brasileiro.",
+            "razaoSocial": "B3 S.A.",
+            "website": "https://www.b3.com.br",
+            "tipoAtivo": "MOEDA"
+          }
+    ]
+}
